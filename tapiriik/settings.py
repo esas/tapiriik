@@ -75,30 +75,31 @@ STATICFILES_FINDERS = (
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
-PIPELINE_JS = {
-    'tapiriik-js': {
-        'source_filenames': (
-          'js/jquery.address-1.5.min.js',
-          'js/tapiriik.js',
-        ),
-        'output_filename': 'js/tapiriik.min.js',
+PIPELINE = {
+    'JAVASCRIPT': {
+        'tapiriik-js': {
+            'source_filenames': (
+              'js/jquery.address-1.5.min.js',
+              'js/tapiriik.js',
+            ),
+            'output_filename': 'js/tapiriik.min.js',
+        },
+        'tapiriik-user-js': {
+            'source_filenames': (
+              'js/jstz.min.js',
+              'js/tapiriik-ng.js',
+            ),
+            'output_filename': 'js/tapiriik-user.min.js',
+        }
     },
-    'tapiriik-user-js': {
-        'source_filenames': (
-          'js/jstz.min.js',
-          'js/tapiriik-ng.js',
-        ),
-        'output_filename': 'js/tapiriik-user.min.js',
+    'STYLESHEETS': {
+        'tapiriik-css': {
+            'source_filenames': (
+              'css/style.css',
+            ),
+            'output_filename': 'css/style.min.css',
+        }
     }
-}
-
-PIPELINE_CSS = {
-    'tapiriik-css': {
-        'source_filenames': (
-          'css/style.css',
-        ),
-        'output_filename': 'css/style.min.css',
-    },
 }
 
 PIPELINE_DISABLE_WRAPPER = True
